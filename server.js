@@ -238,6 +238,7 @@ function createMediaElements(pipeline, ws, callback) {
         }
 
         var options = {
+            //command: "coloreffects"
         }
         pipeline.create('thatoverlay.ThatOverlay', options, function(error, filter) {
             if (error) {
@@ -250,6 +251,7 @@ function createMediaElements(pipeline, ws, callback) {
 }
 
 function connectMediaElements(webRtcEndpoint, filter, callback) {
+
     webRtcEndpoint.connect(filter, function(error) {
         if (error) {
             return callback(error);
